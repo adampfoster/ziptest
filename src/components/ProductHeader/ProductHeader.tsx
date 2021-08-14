@@ -1,9 +1,11 @@
 import { Box, Typography } from "@material-ui/core";
 import React from "react";
+import styles from "../../styles/Products.module.scss";
 
 export const ProductHeader: React.FC = () => {
   return (
     <Box
+      className={styles.product__header}
       style={{
         width: "100%",
         maxWidth: 1000,
