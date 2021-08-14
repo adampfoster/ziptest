@@ -1,5 +1,6 @@
-import { Box, Typography } from "@material-ui/core";
+import { Box, Button, Typography } from "@material-ui/core";
 import React from "react";
+import shoes from "../../assets/images/shoes.png";
 import styles from "../../styles/Products.module.scss";
 
 export const ProductHeader: React.FC = () => {
@@ -7,15 +8,71 @@ export const ProductHeader: React.FC = () => {
     <Box
       className={styles.product__header}
       style={{
+        boxSizing: "border-box",
+        display: "flex",
         width: "100%",
-        maxWidth: 1000,
+        maxWidth: 1440,
+        height: 515,
         padding: "130px 140px",
-        backgroundColor: "#01259B",
+        backgroundColor: "#140CA3",
       }}
     >
-      <Typography variant={"h1"} component={"h2"}>
-        Nike React Sneakers
-      </Typography>
+      <Box>
+        <Typography
+          style={{ color: "#fff", fontSize: "75px", fontWeight: "bold" }}
+          variant={"h1"}
+          component={"h2"}
+        >
+          Nike React Sneakers
+        </Typography>
+        <Typography
+          style={{ color: "#fff", fontSize: "25px" }}
+          variant={"h1"}
+          component={"h2"}
+        >
+          Pay in 4 interest-free installments
+        </Typography>
+        <Box
+          style={{ padding: "20px 0", display: "flex", flexDirection: "row" }}
+        >
+          <Button
+            style={{
+              backgroundColor: "#fff",
+              color: "#003194",
+              marginRight: 10,
+              maxHeight: 38,
+              maxWidth: 115,
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
+              textTransform: "capitalize",
+            }}
+            variant={"contained"}
+          >
+            Men
+          </Button>
+          <Button
+            style={{
+              backgroundColor: "#fff",
+              color: "#003194",
+              marginRight: 10,
+              maxHeight: 38,
+              maxWidth: 115,
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
+              textTransform: "capitalize",
+            }}
+            variant={"contained"}
+          >
+            Women
+          </Button>
+        </Box>
+      </Box>
     </Box>
   );
 };
