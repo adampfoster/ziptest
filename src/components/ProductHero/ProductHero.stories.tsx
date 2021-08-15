@@ -1,17 +1,19 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { ProductHeader } from './ProductHeader';
+import { ProductHero } from "./ProductHero";
 
 export default {
-  title: 'Example/ProductHeader',
-  component: ProductHeader,
+  title: "Example/ProductHero",
+  component: ProductHero,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
   },
-} as ComponentMeta<typeof ProductHeader>;
+} as ComponentMeta<typeof ProductHero>;
 
-const Template: ComponentStory<typeof ProductHeader> = (args) => <ProductHeader {...args} />;
+const Template: ComponentStory<typeof ProductHero> = (args) => (
+  <ProductHero {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
