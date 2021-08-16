@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@700&display=swap');
+
+/* Axiforma Regular */
+@font-face {
+  font-family: 'Axiforma-Regular';
+  src: url('../assets/fonts/Axiforma-Regular.woff') format('woff'),
+    url('../assets/fonts/Axiforma-Regular.eot') format('eot'),
+    url('../assets/fonts/Axiforma-Regular.ttf') format('ttf');
+}
+
+/* Axiforma Bold */
+@font-face {
+  font-family: 'Axiforma-Bold';
+  src: url('../assets/fonts/Axiforma-Bold.woff') format('woff'),
+    url('../assets/fonts/Axiforma-Bold.eot') format('eot'),
+    url('../assets/fonts/Axiforma-Bold.ttf') format('ttf');
+}
+
+/* Axiforma Thin */
+@font-face {
+  font-family: 'Axiforma-Thin';
+  src: url('../assets/fonts/Axiforma-Thin.woff') format('woff'),
+    url('../assets/fonts/Axiforma-Thin.eot') format('eot'),
+    url('../assets/fonts/Axiforma-Thin.ttf') format('ttf');
+}
