@@ -111,6 +111,7 @@ export const ProductSearchResults: React.FC<ProductSearchResultsProps> = ({
                   <Image
                     src={focusProduct.attributes.e_image_urls_og}
                     width={'50%'}
+                    alt={focusProduct.attributes.product_name}
                   />
                 </Box>
               </Box>
