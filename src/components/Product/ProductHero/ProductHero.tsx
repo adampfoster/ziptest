@@ -1,10 +1,10 @@
 import { Box, Button, Typography } from '@material-ui/core'
 import React from 'react'
-import styles from '../../../styles/Products.module.scss'
+import styles from '../../../styles/Products.module.css'
 
 export interface Facet {
-  title: string
-  term: string
+  title: string | number
+  term: string | number
   param: string
 }
 
@@ -24,27 +24,21 @@ export const ProductHero: React.FC<ProductHeroProps> = ({
   }
 
   return (
-    <Box className={styles['product__hero--container']}>
+    <Box className={styles['product__hero__container']}>
       <Box className={styles.product__hero}>
+        <span className={styles['product__hero__decal']}></span>
         <Box>
-          <Typography
-            style={{ color: '#fff', fontSize: '70px', fontWeight: 'bold' }}
-            variant={'h1'}
-            component={'h2'}
-          >
+          <Typography variant={'h1'} component={'h2'}>
             {title}
           </Typography>
-          <Typography
-            style={{ color: '#fff', fontSize: '25px' }}
-            variant={'h1'}
-            component={'h2'}
-          >
+          <Typography variant={'h1'} component={'h3'}>
             Pay in 4 interest-free installments
           </Typography>
           <Box
             style={{ padding: '20px 0', display: 'flex', flexDirection: 'row' }}
           >
             {facetedFilter &&
+              facetedFilter?.length > 0 &&
               facetedFilter?.map((facet: Facet, i: number) => (
                 <Button
                   key={i}

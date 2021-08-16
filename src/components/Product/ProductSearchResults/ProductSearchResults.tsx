@@ -9,33 +9,35 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 import Swal from 'sweetalert2'
-import styles from '../../../styles/Products.module.scss'
+import styles from '../../../styles/Products.module.css'
 import { Product } from '../Product.type'
+import { Facet } from '../ProductHero'
 import { ProductItem } from '../ProductItem'
 import { ResponseData } from '../ResponseDate.type'
 
 const brand = 'Nike'
 
 const crossSell = [
-  { title: 'Air Max', term: 'airmax' },
-  { title: 'Air Jordan', term: 'airjordan' },
-  { title: 'Flyknit', term: 'flyknit' },
+  { title: 'Air Max', term: 'nike air max' },
+  { title: 'Air Jordan', term: 'nike air jordan' },
+  { title: 'Flyknit', term: 'nike flyknit' },
 ]
 
 interface ProductSearchResultsProps {
   responseData: ResponseData
   products: Product[]
+  setFacet: (facet: Facet) => void
 }
 
 export const ProductSearchResults: React.FC<ProductSearchResultsProps> = ({
   products,
   responseData,
+  setFacet,
 }) => {
   const [focusProduct, setFocusProduct] = React.useState<Product | null>(null)
 
   const handleCrossSell = (term: string) => {
-    console.log('crossSell term', term)
-    return
+    setFacet({ title: 'Query', param: 'q', term })
   }
 
   const handleCloseProductDetail = () => {
@@ -69,7 +71,7 @@ export const ProductSearchResults: React.FC<ProductSearchResultsProps> = ({
             <>
               <span
                 className={styles['product__results__info__term']}
-                onClick={() => handleCrossSell(item.term)}
+                onClick={() => handleCrossSell(encodeURIComponent(item.term))}
               >
                 {item.title}
               </span>
@@ -79,8 +81,10 @@ export const ProductSearchResults: React.FC<ProductSearchResultsProps> = ({
           ...
         </Typography>
         <Typography>
-          {responseData?.meta?.pageSize} products from{' '}
-          {responseData?.meta?.total} total products
+          {responseData?.meta?.total < responseData?.meta?.pageSize
+            ? responseData?.meta?.total
+            : responseData?.meta?.pageSize}{' '}
+          products from {responseData?.meta?.total} total products
         </Typography>
       </Box>
       <Dialog
@@ -131,6 +135,37 @@ export const ProductSearchResults: React.FC<ProductSearchResultsProps> = ({
       {products.map((product: Product, i: number) => (
         <ProductItem key={i} product={product} setProduct={setFocusProduct} />
       ))}
+      <Box
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          alignContent: 'center',
+          margin: '20px auto 60px',
+        }}
+      >
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((page: number, i: number) => {
+          if (
+            responseData?.meta?.total - responseData?.meta?.pageSize * (i + 1) <
+            1
+          ) {
+            return
+          }
+          return (
+            <Button
+              style={{ margin: 5 }}
+              variant={'outlined'}
+              key={i}
+              onClick={() =>
+                setFacet({ title: page, param: 'page', term: page })
+              }
+            >
+              {page}
+            </Button>
+          )
+        })}
+      </Box>
     </Box>
   )
 }

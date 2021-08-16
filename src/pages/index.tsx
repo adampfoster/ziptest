@@ -30,7 +30,11 @@ const Home: NextPage = () => {
 
   React.useEffect(() => {
     if (!facet) return
-    searchProducts([{ brand }, { cat: 'shoes' }, { [facet.param]: facet.term }])
+    searchProducts([
+      { brand },
+      { cat: 'shoes' },
+      { [facet.param as string]: facet.term as string },
+    ])
   }, [facet])
 
   return (
@@ -43,7 +47,11 @@ const Home: NextPage = () => {
           { title: 'Women', term: 'female', param: 'gender' },
         ]}
       />
-      <ProductSearchResults responseData={responseData} products={products} />
+      <ProductSearchResults
+        responseData={responseData}
+        products={products}
+        setFacet={setFacet}
+      />
     </div>
   )
 }

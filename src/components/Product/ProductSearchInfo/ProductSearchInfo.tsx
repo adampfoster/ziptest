@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 import Swal from 'sweetalert2'
-import styles from '../../../styles/Products.module.scss'
+import styles from '../../../styles/Products.module.css'
 import { Product } from '../Product.type'
 import { ProductItem } from '../ProductItem'
 import { ResponseData } from '../ResponseDate.type'

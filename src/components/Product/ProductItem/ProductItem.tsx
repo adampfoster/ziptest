@@ -8,7 +8,7 @@ import {
   Typography,
 } from '@material-ui/core'
 import React from 'react'
-import styles from '../../../styles/Products.module.scss'
+import styles from '../../../styles/Products.module.css'
 import { Product } from '../Product.type'
 
 interface ProductItemProps {

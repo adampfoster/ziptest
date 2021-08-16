@@ -1,25 +1,28 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import React from 'react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { ProductHero } from "./ProductHero";
+import { ProductHero } from './ProductHero'
 
 export default {
-  title: "Example/ProductHero",
+  title: 'Example/ProductHero',
   component: ProductHero,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
-} as ComponentMeta<typeof ProductHero>;
+  // argTypes: {
+  //   backgroundColor: { control: 'color' },
+  // },
+} as ComponentMeta<typeof ProductHero>
 
 const Template: ComponentStory<typeof ProductHero> = (args) => (
   <ProductHero {...args} />
-);
+)
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({})
 Primary.args = {
-  // primary: true,
-  // label: 'Button',
-};
+  title: 'React Nike Sneakers',
+  facetedFilter: [
+    { title: 'Men', param: 'gender', term: 'male' },
+    { title: 'Women', param: 'gender', term: 'female' },
+  ],
+}
 
 // export const Secondary = Template.bind({});
 // Secondary.args = {
