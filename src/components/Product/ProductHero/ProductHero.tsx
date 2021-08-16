@@ -45,8 +45,9 @@ export const ProductHero: React.FC<ProductHeroProps> = ({
             style={{ padding: '20px 0', display: 'flex', flexDirection: 'row' }}
           >
             {facetedFilter &&
-              facetedFilter?.map((facet: Facet) => (
+              facetedFilter?.map((facet: Facet, i: number) => (
                 <Button
+                  key={i}
                   onClick={() => handleSelectFacet(facet)}
                   style={{
                     backgroundColor: '#fff',
