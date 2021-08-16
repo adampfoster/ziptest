@@ -8,8 +8,8 @@ import {
   Typography,
 } from '@material-ui/core'
 import React from 'react'
-import styles from '../../../styles/Products.module.css'
 import { Product } from '../Product.type'
+import Image from 'next/image'
 
 interface ProductItemProps {
   product: Product
@@ -21,13 +21,10 @@ export const ProductItem: React.FC<ProductItemProps> = ({
   setProduct,
 }) => {
   return (
-    <Box
-      className={styles['product__item']}
-      onClick={() => setProduct(product)}
-    >
-      <Box className={styles['product__item--content']}>
-        <Box className={styles['product__item--content--image']}>
-          <img src={product?.attributes?.e_image_urls_search_jpg[0][0]} />
+          <Image
+            src={product?.attributes?.e_image_urls_search_jpg[0][0]}
+            alt={product.attributes.product_name}
+          />
         </Box>
         <Box className={styles['product__item__title']}>
           {product.attributes.product_name}

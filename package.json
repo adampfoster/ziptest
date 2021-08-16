@@ -1,5 +1,5 @@
 {
-  "name": "aaa",
+  "name": "Ziptest",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -33,7 +33,7 @@
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0",
     "react-docgen": "^5.4.0",
-    "sass-loader": "^10.1.1",
+    "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
     "typescript": "4.3.5"
   }

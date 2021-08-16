@@ -14,6 +14,8 @@ import { Product } from '../Product.type'
 import { Facet } from '../ProductHero'
 import { ProductItem } from '../ProductItem'
 import { ResponseData } from '../ResponseDate.type'
+import Image from 'next/image'
+
 
 const brand = 'Nike'
 
@@ -68,7 +70,7 @@ export const ProductSearchResults: React.FC<ProductSearchResultsProps> = ({
         <Typography>
           More from {brand} -{' '}
           {crossSell.map((item: Record<string, string>, i: number) => (
-            <>
+            <React.Fragment key={i}>
               <span
                 className={styles['product__results__info__term']}
                 onClick={() => handleCrossSell(encodeURIComponent(item.term))}
@@ -76,7 +78,7 @@ export const ProductSearchResults: React.FC<ProductSearchResultsProps> = ({
                 {item.title}
               </span>
               <span>{i + 1 < crossSell.length ? ', ' : ''}</span>
-            </>
+            </React.Fragment>
           ))}
           ...
         </Typography>
@@ -103,13 +105,16 @@ export const ProductSearchResults: React.FC<ProductSearchResultsProps> = ({
             <span className={styles['product__detail__price']}>
               ${focusProduct?.attributes.retailer_price}
             </span>
-            <Box className={styles['product__detail__scroller']}>
-              <img
-                src={focusProduct?.attributes.e_image_urls_og}
-                width={'50%'}
-                style={{ margin: '0 auto' }}
-              />
-            </Box>
+            {focusProduct && (
+              <Box className={'product__detail__scroller'}>
+                <Box style={{ margin: '0 auto' }}>
+                  <Image
+                    src={focusProduct.attributes.e_image_urls_og}
+                    width={'50%'}
+                  />
+                </Box>
+              </Box>
+            )}
           </DialogContentText>
           <DialogActions
             style={{ display: 'flex', justifyContent: 'space-between' }}

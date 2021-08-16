@@ -13,6 +13,7 @@ import styles from '../../../styles/Products.module.css'
 import { Product } from '../Product.type'
 import { ProductItem } from '../ProductItem'
 import { ResponseData } from '../ResponseDate.type'
+import Image from 'next/image'
 
 const brand = 'Nike'
 
@@ -66,7 +67,9 @@ export const ProductSearchResults: React.FC<ProductSearchInfoProps> = ({
         <Typography>
           More from {brand} -{' '}
           {crossSell.map((item: Record<string, string>, i: number) => (
-            <span onClick={() => handleCrossSell(item.term)}>{item.title}</span>
+            <span key={i} onClick={() => handleCrossSell(item.term)}>
+              {item.title}
+            </span>
           ))}
           ...
         </Typography>
@@ -92,11 +95,13 @@ export const ProductSearchResults: React.FC<ProductSearchInfoProps> = ({
               ${focusProduct?.attributes.retailer_price}
             </span>
             <Box className={styles['product__detail__scroller']}>
-              <img
-                src={focusProduct?.attributes.e_image_urls_og}
-                width={'50%'}
-                style={{ margin: '0 auto' }}
-              />
+              <Box style={{ margin: '0 auto' }}>
+                <Image
+                  src={focusProduct?.attributes.e_image_urls_og as string}
+                  width={'50%'}
+                  alt={focusProduct?.attributes.product_name}
+                />
+              </Box>
             </Box>
           </DialogContentText>
           <DialogActions
