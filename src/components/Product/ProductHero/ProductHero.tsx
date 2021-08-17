@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from '@material-ui/core'
 import React from 'react'
-import styles from '../../../styles/Products.module.css'
+import styles from '../../../styles/products.module.css'
 
 export interface Facet {
   title: string | number
@@ -25,8 +25,8 @@ export const ProductHero: React.FC<ProductHeroProps> = ({
 
   return (
     <Box className={styles['product__hero__container']}>
-      <Box className={styles.product__hero}>
-        <span className={styles['product__hero__decal']}></span>
+      <Box className={'product__hero'}>
+        <span className={'product__hero__decal'}></span>
         <Box>
           <Typography variant={'h1'} component={'h2'}>
             {title}

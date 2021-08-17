@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ProductHero } from './ProductHero'
 
 export default {
-  title: 'Example/ProductHero',
+  title: 'Zip/ProductHero',
   component: ProductHero,
   // argTypes: {
   //   backgroundColor: { control: 'color' },

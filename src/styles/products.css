@@ -1,0 +1,203 @@
+.product__hero__container {
+  height: 557px;
+  margin-bottom: 24px;
+}
+
+.product__hero {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  height: 514px;
+  padding: 130px 570px 130px 140px;
+  background-color: #140ca3;
+}
+@media only screen and (max-width: 729px) {
+  .product__hero {
+    padding-left: 30px;
+    padding-right: 345px;
+    padding-top: 30px;
+    font-size: 50%;
+  }
+}
+
+.product__hero h2 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 75px;
+  line-height: 65px;
+}
+@media only screen and (max-width: 499px) {
+  .product__hero h2 {
+    font-size: 65px;
+  }
+}
+@media only screen and (max-width: 399px) {
+  .product__hero h2 {
+    font-size: 50px;
+  }
+}
+
+.product__hero h3 {
+  color: #fff;
+  font-size: 25px;
+}
+
+.product__hero__decal {
+  background-image: url(../assets/images/shoes.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 50%;
+  height: 100%;
+  min-width: 699px;
+  width: 100%;
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  right: -1px;
+  padding-left: 500px;
+}
+@media only screen and (max-width: 767px) {
+  .product__hero__decal {
+    background-size: 40%;
+  }
+}
+
+.product__results {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 15px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product__results__info {
+  margin-bottom: 26px;
+  display: flex;
+  flex-direction: row;
+}
+@media only screen and (max-width: 649px) {
+  .product__results__info {
+    flex-direction: column;
+  }
+}
+.product__results__info__term {
+  cursor: pointer;
+  color: #140ca3;
+  text-decoration: underline;
+}
+.product__results__info__term:hover {
+  text-decoration: none;
+}
+
+.product__item {
+  box-sizing: border-box;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  width: 265px;
+}
+@media only screen and (max-width: 559px) {
+  .product__item {
+    width: 100%;
+  }
+}
+
+.product__item--content .product__item--content--image {
+  height: 399px;
+  margin-bottom: 22px;
+  border: 10px solid #faf0e6;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 41px;
+}
+@media only screen and (max-width: 559px) {
+  .product__item--content .product__item--content--image {
+    height: 75vh;
+  }
+}
+
+.product__item--content .product__item--content--image img {
+  width: 100%;
+}
+
+.product__item__title {
+  display: block;
+  font-family: 'Axiforma-Regular';
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20.8px;
+  margin-bottom: 3px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+
+.product__item__brand {
+  display: block;
+  font-family: 'Axiforma-Regular';
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0.5px;
+  color: #140ca3;
+  margin-bottom: 12px;
+}
+
+.product__item__price {
+  display: block;
+  font-family: 'Axiforma-Bold';
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  margin-bottom: 15px;
+}
+
+.product__item__payments {
+  display: block;
+  font-family: 'Axiforma-Thin';
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15.6px;
+  color: #525761;
+}
+
+.product__detail__title {
+  font-family: 'Axiforma-Bold';
+  font-size: 30px;
+  display: block;
+}
+
+.product__detail__brand {
+  font-family: 'Axiforma-Bold';
+  font-size: 20px;
+  color: #000;
+  display: block;
+}
+
+.product__detail__price {
+  color: #000;
+  font-family: 'Axiforma-Thin';
+  font-size: 50px;
+  display: block;
+}
+
+.product__detail__addtocart {
+  margin: 20px;
+  background-color: #140ca3;
+  color: #fff;
+  font-weight: 700;
+}
+
+.product__detail__scroller {
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+}

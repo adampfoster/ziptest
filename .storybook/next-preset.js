@@ -15,7 +15,7 @@ module.exports = {
     // TypeScript with Next.js
     newConfig.module.rules.push({
       test: /\.(ts|tsx)$/,
-      include: [path.resolve(__dirname, '../components')],
+      include: [path.resolve(__dirname, '../src/components')],
       use: [
         {
           loader: 'babel-loader',
@@ -32,8 +32,8 @@ module.exports = {
     newConfig.module.rules.push({
       test: /\.(s*)css$/,
       loaders: ['style-loader', 'css-loader', 'sass-loader'],
-      // include: path.resolve(__dirname, "../styles/global.css"),
-      include: path.resolve(__dirname, '../src/styles/Products.module.css'),
+      include: path.resolve(__dirname, '../src/styles/global.css'),
+      include: path.resolve(__dirname, '../src/styles/Products.modules.css'),
     })
 
     return newConfig

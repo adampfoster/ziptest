@@ -1,9 +1,7 @@
-import { Box, makeStyles } from '@material-ui/core'
 import React from 'react'
 import { Product } from '../Product.type'
-import Image from 'next/image'
-import styles from '../../../styles/Products.module.css'
-import { background } from '@storybook/theming'
+import { Box } from '@material-ui/core'
+import styles from '../../../styles/products.module.css'
 
 interface ProductItemProps {
   product: Product

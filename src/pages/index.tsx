@@ -38,7 +38,7 @@ const Home: NextPage = () => {
   }, [facet])
 
   return (
-    <div className={styles.container}>
+    <div className={styles['container']}>
       <ProductHero
         setFacet={setFacet}
         title={'Nike React Sneakers'}
