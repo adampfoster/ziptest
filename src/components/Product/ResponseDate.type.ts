@@ -10,12 +10,13 @@ export interface Aggregations {
   sales?: any
 }
 
-export interface Meta {
+export interface MetaData {
   pageSize: number
   total: number
-  aggregations: Aggregations
+  response_type: string
 }
 
 export interface ResponseData {
-  meta: Meta
+  aggregations: Aggregations
+  meta: MetaData
 }

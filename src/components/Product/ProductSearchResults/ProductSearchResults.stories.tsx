@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { ProductSearchResults } from './ProductSearchResults'
 import { Product } from '../Product.type'
+import { ResponseData } from '../ResponseDate.type'
 
 export default {
   title: 'Zip/ProductSearchResults',
@@ -575,9 +576,29 @@ const products: Product[] = [
   },
 ]
 
+const responseData: ResponseData = {
+  aggregations: {
+    brands: null,
+    categories: null,
+    colors: null,
+    countries: null,
+    max_price: 0,
+    offers: null,
+    payments: null,
+    retailers: null,
+    sales: null,
+  },
+  meta: {
+    pageSize: 20,
+    response_type: 'search-response-normal',
+    total: 187466,
+  },
+}
+
 export const Primary = Template.bind({})
 Primary.args = {
   products,
+  responseData,
 }
 
 // export const Secondary = Template.bind({});
