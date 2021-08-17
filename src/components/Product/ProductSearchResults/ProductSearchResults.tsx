@@ -107,10 +107,12 @@ export const ProductSearchResults: React.FC<ProductSearchResultsProps> = ({
             </span>
             {focusProduct && (
               <Box className={'product__detail__scroller'}>
-                <Box style={{ margin: '0 auto' }}>
+                <Box style={{ margin: '0 auto', width: '100%', height:'100%' }}>
                   <Image
                     src={focusProduct.attributes.e_image_urls_og}
-                    width={'50%'}
+                    width={'100%'}
+                    height={'100%'}
+                    layout={'responsive'}
                     alt={focusProduct.attributes.product_name}
                   />
                 </Box>
